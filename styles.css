@@ -15,19 +15,11 @@ body {
   margin: 0; /* Remove default margin */
 }
 
-/* styles.css */
-.navigation {
-  transition: all 0.3s ease;
-  background-color: #343a40; /* Match your navbar-dark color */
+
+h2 {
+  font-family: "Urbanist", sans-serif;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Ensures the nav bar stays above other content */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
-}
 
 /* Navigation Bar Styles */
 .navigation {
@@ -37,8 +29,9 @@ body {
   z-index: 1000;
 }
 
+/* Adjust logo size */
 .navbar-brand .logo {
-  height: 50px; /* Adjust logo size */
+  height: 50px; 
 }
 
 .navbar-toggler {
@@ -84,7 +77,7 @@ body {
 
 /* Full cover image for the header */
 .header-row {
-  background-image: url(images/crosstrek2.jpg); /* Replace with your image URL */
+  background-image: url(images/crosstrek1.jpg); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -115,7 +108,6 @@ body {
   z-index: 1; /* Position the overlay below the text and button */
 }
 
-
 .header-row h1 {
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
@@ -128,7 +120,7 @@ body {
   z-index: 2; /* Ensure text stays above the overlay */
 }
 
-.btn-primary {
+.btn-primary-header {
   padding: 10px 20px; /* Adjust button padding */
   background-color: #1254aa; /* Button background color */
   color: #fff; /* Button text color */
@@ -139,13 +131,14 @@ body {
   transition: background-color 0.3s; /* Smooth color transition */
   margin-top: 20px; /* Space above the button */
   z-index: 2; /* Ensure button stays above the overlay */
+  width: 240px;
 }
 
-.btn-primary {
+.btn-primary-header {
   margin-top: 20px; /* Space above the button */
 }
 
-.btn-primary:hover {
+.btn-primary-header:hover {
   background-color: #0d4389; /* Darker shade on hover */
 }
 
@@ -178,7 +171,7 @@ body {
 }
 
 .row-3 p {
-  text-align: left;
+  text-align: center;
   font-size: 18px;
   font-family: 'Muli', sans-serif;
 }
@@ -213,7 +206,7 @@ body {
   font-size: 1.5rem;
   text-align: center;
   align-content: flex-end;
-  width: 40%
+  width: 40%;
 }
 
 /* Right column text styling */
@@ -234,13 +227,13 @@ body {
 .right-column-row-4 {
   display: block;
   background-color: #fff;
-  height: 400px;
+  height: 640px;
   padding: 60px;
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
-  align-content: flex-end; 
-   width: 35%
+  align-content: center; 
+   width: 40%;
 }
 
 /* Right column text styling */
@@ -249,33 +242,65 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px; /* Adjust height as needed */
+  height: 640px; /* Adjust height as needed */
   overflow: hidden; /* Ensures that the image does not overflow its container */
   display: inline-block; /* Allows for responsive sizing */
-  width: 65%
+  width: 60%;
 }
 
 /* Left column with background image */
 .left-column-row-5 {
   display: block;
   background-color: #fff;
-  height: 400px;
+  height: 640px;
   padding: 60px;
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
-  align-content: flex-end;
-  width: 35%
+  align-content: center; 
+  width: 40%;
 }
 
 /* Right column text styling */
 .right-column-row-5 {
+  background-image: url(images/crosstrek10.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 640px; /* Adjust height as needed */
+  width: 60%;
+}
+
+
+/* Left column with background image */
+.left-column-row-6 {
   background-image: url(images/crosstrek8.jpg); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px; /* Adjust height as needed */
-  width: 65%
+  height: 640px; /* Adjust height as needed */
+  width: 60%;
+}
+
+/* Right column text styling */
+.right-column-row-6 {
+  display: block;
+  background-color: #fff;
+  height: auto;
+  padding: 60px;
+  color: #0a0a0a;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: center; 
+  width: 40%;
+}
+
+.row-6 {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  text-align: center; /* Center text within the column */
+  padding: 0px; /* Adjust padding as needed */
 }
 
 .right-column p {
@@ -284,13 +309,14 @@ body {
 }
 
 .full-image-row-1 {
-  background-image: url(images/crosstrek10.jpg); /* Replace with your image URL */
+  background-image: url(images/crosstrek2.jpg); /* Replace with your image URL */
   background-size: cover;
   background-position: center center ;
   background-repeat: no-repeat;
   background-attachment: scroll;
   height: 350px;
 }
+
 
 .view-btn {
   margin: 20px
@@ -316,14 +342,6 @@ body {
 
 .list-column li {
   margin-bottom: 10px; /* Space between list items */
-}
-
-.row-6 {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically if needed */
-  text-align: center; /* Center text within the column */
-  padding: 0px; /* Adjust padding as needed */
 }
 
 .left-column-row-3 {
@@ -379,7 +397,7 @@ body {
 
 .gallery {
   display: flex;
-  gap: 10px;
+  gap: 0px;
 }
 
 .gallery-item {
@@ -391,6 +409,119 @@ body {
 .gallery-item:hover {
   transform: scale(1.05);
 }
+
+
+
+
+
+/* Full width, same height images */
+.custom-gallery-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.custom-modal {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal content wrapper for slideshow */
+.custom-modal-content {
+  position: relative;
+  margin: auto;
+  width: 60%; /* Modal will take 60% of the screen width */
+  max-width: 100%; /* Ensures responsiveness */
+  max-height: 80%; /* Limits modal height to 80% of the viewport */
+  overflow: hidden; /* Prevents content overflow */
+  background-color: white;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  padding: 0px;
+}
+
+/* Slide image styles */
+.custom-slide {
+  display: none; /* Hide all slides initially */
+}
+
+.custom-active {
+  display: block; /* Show only the active slide */
+}
+
+.custom-slide img {
+  width: 100%;
+  height: 600px; /* Enforce a consistent height */
+  object-fit: cover; /* Ensures images fill the space uniformly */
+}
+
+/* Navigation buttons */
+.custom-prev, .custom-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.custom-prev {
+  left: 0;
+}
+
+.custom-next {
+  right: 0;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Close button */
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-close:hover {
+  color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Basic styling */
 body {
@@ -499,6 +630,50 @@ body {
 .navbar-brand .logo {
   height: auto;
 }
+
+
+
+
+
+
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .masonry-gallery {
+    column-count: 3; /* 3 columns for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-gallery {
+    column-count: 2; /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-gallery {
+    column-count: 1; /* 1 column for mobile */
+  }
+}
+
 
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {

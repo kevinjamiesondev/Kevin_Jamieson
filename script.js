@@ -43,3 +43,72 @@ function handleClickOutside(event) {
 document.addEventListener('DOMContentLoaded', () => {
     showSlides(slideIndex);
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Ensure the modal is hidden when the page loads
+  document.getElementById("custom-modal").style.display = "none";
+});
+
+function openCustomModal(index) {
+  document.getElementById("custom-modal").style.display = "block";
+  showCustomSlides(index);
+  document.addEventListener("keydown", keyNavigation); // Listen for keyboard input
+}
+
+function closeCustomModal() {
+  document.getElementById("custom-modal").style.display = "none";
+  document.removeEventListener("keydown", keyNavigation); // Remove keyboard listener
+}
+
+function showCustomSlides(index) {
+  var slides = document.getElementsByClassName("custom-slide");
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("custom-active"); // Hide all slides
+  }
+  slides[index].classList.add("custom-active"); // Show the current slide
+  customSlideIndex = index; // Set the current index
+}
+
+function plusCustomSlides(n) {
+  var slides = document.getElementsByClassName("custom-slide");
+  customSlideIndex += n;
+
+  if (customSlideIndex >= slides.length) { 
+    customSlideIndex = 0; 
+  }
+  if (customSlideIndex < 0) { 
+    customSlideIndex = slides.length - 1; 
+  }
+  
+  showCustomSlides(customSlideIndex); // Show the new slide
+}
+
+function keyNavigation(event) {
+  if (event.key === "ArrowLeft") {
+    plusCustomSlides(-1); // Navigate left
+  } else if (event.key === "ArrowRight") {
+    plusCustomSlides(1); // Navigate right
+  } else if (event.key === "Escape") {
+    closeCustomModal(); // Close modal on Escape key
+  }
+}
+
+// Close modal when clicking outside the content area
+window.onclick = function(event) {
+  var modal = document.getElementById("custom-modal");
+  if (event.target === modal) {
+    closeCustomModal();
+  }
+};
+
+// Add event listener to images to go to the next slide on click
+var images = document.getElementsByClassName("custom-slide");
+for (var i = 0; i < images.length; i++) {
+  images[i].addEventListener("click", function() {
+    plusCustomSlides(1); // Move to the next slide on image click
+  });
+}
