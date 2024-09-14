@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Bootstrap Layout with Header Image</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navigation">
+    <a class="navbar-brand" href="#">
+      <img src="images/SOA_Primary_HOR_600x150.webp" alt="Logo" class="logo"> <!-- Replace with your logo URL -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inventory</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Build & Price</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Find a Retailer</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- Header Row with Full Cover Image -->
+<div class="container">
+    <div class="row">
+        <div class="col-12 header-row">
+            <h1 class="fade-in">Introducing the<br>2024 Subaru Crosstrek</h1>
+            <!-- Anchor Button to Learn More Section -->
+            <a class="btn btn-primary" href="#learn-more">Learn More</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Intro Row - Dark - One Column -->
+    <div class="row row-2">
+      <div class="col-md-12">
+        <h4 class="fade-in">What are you waiting for?</h4>
+        <h2 class="fade-in">Experience the True Journey with the Subaru Crosstrek</h2>
+      </div>
+    </div>
+
+ <!-- Row 3 -->
+ <div class="row row-3" id="learn-more">
+    <div class="col-md-6 left-column-row-3">
+        <h2>Always room for stories</h2>
+        <p>The 2024 Subaru Crosstrek is the most powerful, most fun to drive, and safest Crosstrek we’ve ever made, with performance, technology, and design updates throughout.
+        </p>
+      <button class="btn btn-primary" onclick="openModal()">View Gallery</button>
+    </div>
+    <div class="col-md-6 right-column-row-3 fade-in-image">
+      <!-- Background image will be applied via CSS -->
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="slides">
+        <div class="slide">
+          <img src="images/crosstrek4.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+          <img src="images/crosstrek9.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="images/crosstrek5.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+            <img src="images/crosstrek3.jpg" alt="Image 3">
+        </div>
+          <div class="slide">
+            <img src="images/crosstrek7.jpg" alt="Image 3">
+        </div>
+          <div class="slide">
+            <img src="images/crosstrek1.jpg" alt="Image 3">
+        </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+
+    <!-- Row 4 -->
+    <div class="row row-4">
+      <div class="col-md-6 left-column-row-4">
+        <!-- Background image will be applied via CSS -->
+      </div>
+      <div class="col-md-6 right-column-row-4">
+        <h2>Extra Power, Capability, and Fun</h2>
+        <p>The 2024 Crosstrek features a newly available 2.5-liter direct-injection SUBARU BOXER engine that delivers more torque and increases output to 182 horsepower – extra power that makes all your trips more exciting and responsive.
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="row row-5">
+      <div class="col-md-6 left-column-row-5">
+        <h2>Sporty Exterior Design</h2>
+        <p>Crosstrek Sport features unique exterior design elements like its aggressively styled grille and wheel arch moldings, gunmetal finish exterior accents, and exclusive dark gray wheels.
+        </p>
+      </div>
+      <div class="col-md-6 right-column-row-5">
+        <!-- Background image will be applied via CSS -->
+      </div>
+    </div>
+
+    <!-- Row 6 -->
+    <div class="row row-6">
+      <div class="col-md-12">
+        <h2>Ready to Roll? Check Out Our 2024 Crosstrek Inventory and Start Your Journey</h2>
+        <div class="view-inventory">
+          <button class="view-btn">Search Available Inventory</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 7 -->
+    <div class="row row-7">
+      <div class="col-md-12 full-image-row-1">
+        <!-- Background image will be applied via CSS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="footer">
+        <p>Sales: <a href="#"><a href="tel:5558775434">555-877-5434</a></p>
+        <p>Service: <a href="#"><a href="tel:5558775435 ">555-877-5435</a></p>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Link to the external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

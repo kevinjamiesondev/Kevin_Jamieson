@@ -1,0 +1,536 @@
+body {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0; /* Remove margin from body */
+  width: 100%;
+}
+
+.container {
+  width: 100%; /* Make the container span the full width */
+  max-width: 100%; /* Ensure it doesn't shrink */
+  padding: 0; /* Remove default padding from Bootstrap's container */
+  margin: 0; /* Remove default margin */
+}
+
+/* styles.css */
+.navigation {
+  transition: all 0.3s ease;
+  background-color: #343a40; /* Match your navbar-dark color */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the nav bar stays above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+}
+
+/* Navigation Bar Styles */
+.navigation {
+  background-color: #f2f2f2; /* Background color for navigation */
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-brand .logo {
+  height: 50px; /* Adjust logo size */
+}
+
+.navbar-toggler {
+  border: none;
+  color: #ffffff
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"%3E%3Cpath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/%3E%3C/svg%3E');
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #131313;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  margin: 10px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: #1b1b1b; /* Highlight color on hover */
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the fade-in animation to an element */
+.fade-in {
+  animation: fadeIn 1.3s ease-in; /* Adjust duration and easing as needed */
+}
+
+
+/* Full cover image for the header */
+.header-row {
+  background-image: url(images/crosstrek2.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: white;
+  height: 80vh; /* Set height for the header */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  justify-content: center;
+  border-radius: 0; /* Remove rounded corners */
+  margin: 0;
+  width: 100vw; /* Full width of the viewport */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* Ensures the header is centered */
+  z-index: 1; /* Set a stacking context */
+}
+
+.header-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with opacity */
+  z-index: 1; /* Position the overlay below the text and button */
+}
+
+
+.header-row h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-bottom: 20px; /* Space between the heading and the button */
+  z-index: 2; /* Ensure text stays above the overlay */
+}
+
+.btn-primary {
+  padding: 10px 20px; /* Adjust button padding */
+  background-color: #1254aa; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 20px; /* Font size for button */
+  transition: background-color 0.3s; /* Smooth color transition */
+  margin-top: 20px; /* Space above the button */
+  z-index: 2; /* Ensure button stays above the overlay */
+}
+
+.btn-primary {
+  margin-top: 20px; /* Space above the button */
+}
+
+
+.btn-primary:hover {
+  background-color: #0d4389; /* Darker shade on hover */
+}
+
+.header-row {
+  text-align: center; /* Center the content */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.header-row h1 {
+  margin-bottom: 20px; /* Space between the heading and the button */
+}
+
+.row {
+  margin: 0; /* Remove default row margin */
+  width: 100%;
+  padding: 0px 0;
+}
+
+.row p {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+
+.row-3 {
+  display: flex
+}
+
+.row-3 p {
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Muli', sans-serif;
+}
+
+.row-p h2 {
+  text-align: left;
+}
+
+
+.row .col-md-12 {
+  padding: 65px;
+  width: 100%;
+  background-color: #1b1b1b;
+  color: #ffffff;
+  text-align: center;
+}
+
+.row .col-md-12 h2 {
+  font-size: 2rem;
+}
+
+/* Left column with background image */
+.left-column-row-3 {
+  display: block;
+  background-color: #fff;
+  height: 400px;
+  padding: 60px;
+  color: #0a0a0a;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: flex-end;
+}
+
+/* Right column text styling */
+.right-column-row-3 {
+  background-image: url(images/crosstrek.png); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px; /* Adjust height as needed */
+}
+
+.row-3 {
+  padding: 60px 0;
+}
+
+/* Left column with background image */
+.right-column-row-4 {
+  display: block;
+  background-color: #fff;
+  height: 400px;
+  padding: 60px;
+  color: #0a0a0a;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: flex-end;
+}
+
+/* Right column text styling */
+.left-column-row-4 {
+  background-image: url(images/crosstrek11.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px; /* Adjust height as needed */
+  overflow: hidden; /* Ensures that the image does not overflow its container */
+  display: inline-block; /* Allows for responsive sizing */
+}
+
+
+
+/* Left column with background image */
+.left-column-row-5 {
+  display: block;
+  background-color: #fff;
+  height: 400px;
+  padding: 60px;
+  color: #0a0a0a;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: flex-end;
+}
+
+/* Right column text styling */
+.right-column-row-5 {
+  background-image: url(images/crosstrek8.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px; /* Adjust height as needed */
+}
+
+.right-column p {
+  margin: 0;
+  text-align: center;
+}
+
+.full-image-row-1 {
+  background-image: url(images/crosstrek10.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center center ;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  height: 350px;
+}
+
+.view-btn {
+  margin: 20px
+}
+
+.list-container {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: flex-start; /* Aligns items to the top of the container */
+  max-width: 800px; /* Optional: set a maximum width for the container */
+  padding: 20px; /* Optional: padding around the container */
+  background-color: #1b1b1b; /* Optional: background color for the container */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.list-column {
+  list-style-type: disc; /* Bulleted list */
+  margin: 0;
+  padding: 0 20px; /* Space between columns */
+}
+
+.list-column li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.row-6 {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  text-align: center; /* Center text within the column */
+  padding: 0px; /* Adjust padding as needed */
+}
+
+.left-column-row-3 {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.view-inventory {
+  margin-top: 20px; /* Space between text and button */
+}
+
+.view-btn {
+  padding: 10px 20px; /* Adjust button padding */
+  background-color: #1254aa; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 20px; /* Font size for button */
+  transition: background-color 0.3s; /* Smooth color transition */
+}
+
+.view-btn:hover {
+  background-color: #0d4389; /* Darker shade on hover */
+}
+
+.btn-primary {
+  padding: 10px 20px; /* Adjust button padding */
+  background-color: #1254aa; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 20px; /* Font size for button */
+  transition: background-color 0.3s; /* Smooth color transition */
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0d4389; /* Darker shade on hover */
+}
+
+
+
+
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-item {
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-item {
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: 15% auto;
+  padding: 0px;
+  width: 80%;
+  max-width: 900px;
+  background-color: #fff;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px; /* Adjust this value to your preferred height */
+  object-fit: cover; /* Ensure images cover the container while maintaining aspect ratio */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+
+
+
+
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .header-row h1 {
+    font-size: 4.0rem;
+    font-weight: bold;
+    text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    z-index: 2; /* Ensure text stays above the overlay */
+  }
+
+  /* Full cover image for the header */
+.header-row {
+  background-image: url(images/crosstrek2.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: white;
+  height: 60vh; /* Set height for the header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0; /* Remove rounded corners */
+  margin: 0;
+  width: 100vw; /* Full width of the viewport */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* Ensures the header is centered */
+  z-index: 1; /* Set a stacking context */
+}
+
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Your custom styles here */
+}
+
+/* Medium devices (tablets and small desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Your custom styles here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Your custom styles here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Your custom styles here */
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Your custom styles here */
+}
