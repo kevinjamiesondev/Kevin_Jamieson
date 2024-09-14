@@ -145,7 +145,6 @@ body {
   margin-top: 20px; /* Space above the button */
 }
 
-
 .btn-primary:hover {
   background-color: #0d4389; /* Darker shade on hover */
 }
@@ -174,7 +173,6 @@ body {
   border-radius: 8px;
 }
 
-
 .row-3 {
   display: flex
 }
@@ -190,8 +188,8 @@ body {
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  font-size: 3rem;
 }
-
 
 .row .col-md-12 {
   padding: 65px;
@@ -215,6 +213,7 @@ body {
   font-size: 1.5rem;
   text-align: center;
   align-content: flex-end;
+  width: 40%
 }
 
 /* Right column text styling */
@@ -224,6 +223,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 500px; /* Adjust height as needed */
+  width: 60%;
 }
 
 .row-3 {
@@ -239,7 +239,8 @@ body {
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
-  align-content: flex-end;
+  align-content: flex-end; 
+   width: 35%
 }
 
 /* Right column text styling */
@@ -251,9 +252,8 @@ body {
   height: 500px; /* Adjust height as needed */
   overflow: hidden; /* Ensures that the image does not overflow its container */
   display: inline-block; /* Allows for responsive sizing */
+  width: 65%
 }
-
-
 
 /* Left column with background image */
 .left-column-row-5 {
@@ -265,6 +265,7 @@ body {
   font-size: 1.5rem;
   text-align: center;
   align-content: flex-end;
+  width: 35%
 }
 
 /* Right column text styling */
@@ -274,6 +275,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 500px; /* Adjust height as needed */
+  width: 65%
 }
 
 .right-column p {
@@ -343,6 +345,7 @@ body {
   cursor: pointer;
   font-size: 20px; /* Font size for button */
   transition: background-color 0.3s; /* Smooth color transition */
+  font-family: "Urbanist", sans-serif;
 }
 
 .view-btn:hover {
@@ -359,14 +362,14 @@ body {
   font-size: 20px; /* Font size for button */
   transition: background-color 0.3s; /* Smooth color transition */
   margin-top: 20px;
+  font-family: "Urbanist", sans-serif;
+  letter-spacing: 0.05;
+  width: 180px;
 }
 
 .btn-primary:hover {
   background-color: #0d4389; /* Darker shade on hover */
 }
-
-
-
 
 
 /* Basic styling */
@@ -388,7 +391,6 @@ body {
 .gallery-item:hover {
   transform: scale(1.05);
 }
-
 
 /* Basic styling */
 body {
@@ -478,20 +480,25 @@ body {
 }
 
 .footer {
-  display: block;
-  background-color: #fff;
-  height: 300px;
+  display: grid;
+  background-color: #1b1b1b;
+  height: 420px;
   padding: 60px;
-  color: #0a0a0a;
+  color: #ffffff;
   font-size: 1.5rem;
   text-align: center;
   align-content: flex-end;
+  font-family: "Urbanist", sans-serif;
 }
 
 .footer img {
   margin-bottom: 40px;
+  width: 240px;
 }
 
+.navbar-brand .logo {
+  height: auto;
+}
 
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {
