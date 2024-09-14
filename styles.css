@@ -117,6 +117,9 @@ body {
 
 
 .header-row h1 {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-size: 6rem;
   font-weight: bold;
   text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.7);
@@ -184,6 +187,9 @@ body {
 
 .row-p h2 {
   text-align: left;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 
@@ -472,6 +478,21 @@ body {
 }
 
 
+
+.footer {
+  display: block;
+  background-color: #fff;
+  height: 300px;
+  padding: 60px;
+  color: #0a0a0a;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: flex-end;
+}
+
+.footer img {
+  margin-bottom: 40px;
+}
 
 
 
