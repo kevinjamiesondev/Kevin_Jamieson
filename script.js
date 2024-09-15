@@ -1,114 +1,108 @@
-let slideIndex = 1;
+window.onload = function() {
+  document.querySelector('.btn-primary').addEventListener('click', function() {
+    document.getElementById('view-gallery').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+};
 
-function openModal() {
-    document.getElementById('modal').style.display = 'block';
-    showSlides(slideIndex);
-    document.addEventListener('keydown', handleKeyPress);
-    document.addEventListener('click', handleClickOutside);
+
+function scrollToGallery() {
+  const element = document.getElementById('view-gallery');
+  if (element) {
+    requestAnimationFrame(() => {
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  }
 }
 
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-    document.removeEventListener('keydown', handleKeyPress);
-    document.removeEventListener('click', handleClickOutside);
-}
+//  Gallery
+let customSlideIndex = 0;
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    slideIndex = n;
-    showSlides(slideIndex);
-}
-
-function showSlides(n) {
-    let slides = document.getElementsByClassName('slide');
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (let slide of slides) slide.style.display = 'none';
-    slides[slideIndex - 1].style.display = 'block';
-}
-
-function handleKeyPress(event) {
-    if (event.key === 'Escape') closeModal();
-    else if (event.key === 'ArrowRight') plusSlides(1);
-    else if (event.key === 'ArrowLeft') plusSlides(-1);
-}
-
-function handleClickOutside(event) {
-    if (event.target.classList.contains('modal')) closeModal();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    showSlides(slideIndex);
-});
-
-
-
-
-
+// Ensure the modal is hidden when the page loads
 document.addEventListener('DOMContentLoaded', function() {
-  // Ensure the modal is hidden when the page loads
-  document.getElementById("custom-modal").style.display = "none";
+  const modal = document.getElementById("custom-modal");
+  modal.style.display = "none";
+  showCustomSlides(customSlideIndex); // Show the first slide initially
 });
 
+// Function to open the modal with the given index
 function openCustomModal(index) {
-  document.getElementById("custom-modal").style.display = "block";
+  const modal = document.getElementById("custom-modal");
+  modal.style.display = "block";
+  modal.classList.add("show");
   showCustomSlides(index);
-  document.addEventListener("keydown", keyNavigation); // Listen for keyboard input
+  document.addEventListener("keydown", keyNavigation);
+  document.addEventListener("click", handleClickOutside); // Handle clicks outside the modal
 }
 
+// Function to close the modal
 function closeCustomModal() {
-  document.getElementById("custom-modal").style.display = "none";
-  document.removeEventListener("keydown", keyNavigation); // Remove keyboard listener
+  const modal = document.getElementById("custom-modal");
+  modal.style.display = "none";
+  modal.classList.remove("show");
+  document.removeEventListener("keydown", keyNavigation);
+  document.removeEventListener("click", handleClickOutside);
 }
 
+// Function to show the slides
 function showCustomSlides(index) {
-  var slides = document.getElementsByClassName("custom-slide");
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("custom-active"); // Hide all slides
-  }
-  slides[index].classList.add("custom-active"); // Show the current slide
-  customSlideIndex = index; // Set the current index
-}
+  const slides = document.getElementsByClassName("custom-slide");
 
-function plusCustomSlides(n) {
-  var slides = document.getElementsByClassName("custom-slide");
-  customSlideIndex += n;
-
-  if (customSlideIndex >= slides.length) { 
+  // Ensure index is within bounds
+  if (index >= slides.length) { 
     customSlideIndex = 0; 
-  }
-  if (customSlideIndex < 0) { 
+  } else if (index < 0) { 
     customSlideIndex = slides.length - 1; 
+  } else {
+    customSlideIndex = index;
   }
-  
-  showCustomSlides(customSlideIndex); // Show the new slide
+
+  // Hide all slides and show the current one
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("custom-active");
+  }
+  slides[customSlideIndex].classList.add("custom-active");
 }
 
+// Function to navigate slides (left/right)
+function plusCustomSlides(n) {
+  showCustomSlides(customSlideIndex + n);
+}
+
+// Handle keyboard navigation
 function keyNavigation(event) {
   if (event.key === "ArrowLeft") {
-    plusCustomSlides(-1); // Navigate left
+    plusCustomSlides(-1);
   } else if (event.key === "ArrowRight") {
-    plusCustomSlides(1); // Navigate right
+    plusCustomSlides(1);
   } else if (event.key === "Escape") {
-    closeCustomModal(); // Close modal on Escape key
+    closeCustomModal();
   }
 }
 
-// Close modal when clicking outside the content area
-window.onclick = function(event) {
-  var modal = document.getElementById("custom-modal");
+// Handle clicks outside the modal content
+function handleClickOutside(event) {
+  const modal = document.getElementById("custom-modal");
   if (event.target === modal) {
     closeCustomModal();
   }
-};
+}
 
-// Add event listener to images to go to the next slide on click
-var images = document.getElementsByClassName("custom-slide");
-for (var i = 0; i < images.length; i++) {
-  images[i].addEventListener("click", function() {
+// Add click event listeners to images to go to the next slide
+const customImages = document.getElementsByClassName("custom-slide");
+for (let i = 0; i < customImages.length; i++) {
+  customImages[i].addEventListener("click", function() {
     plusCustomSlides(1); // Move to the next slide on image click
   });
 }
+
+// Add event listeners for custom navigation buttons
+document.getElementById("prev-custom").addEventListener("click", function() {
+  plusCustomSlides(-1); // Previous slide
+});
+document.getElementById("next-custom").addEventListener("click", function() {
+  plusCustomSlides(1); // Next slide
+});

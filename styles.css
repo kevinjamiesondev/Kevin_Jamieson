@@ -4,26 +4,61 @@ body {
   font-style: normal;
   background-color: #ffffff;
   padding: 0;
-  margin: 0; /* Remove margin from body */
-  width: 100%;
+  margin: 0;
+  width: 100vw;
 }
-
-.container {
-  width: 100%; /* Make the container span the full width */
-  max-width: 100%; /* Ensure it doesn't shrink */
-  padding: 0; /* Remove default padding from Bootstrap's container */
-  margin: 0; /* Remove default margin */
-}
-
 
 h2 {
   font-family: "Urbanist", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
 
-/* Navigation Bar Styles */
+.view-btn-secondary{
+  padding: 10px 20px; 
+  color: #fff; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 19px;
+  transition: background-color 0.3s;
+  font-family: "Urbanist", sans-serif;
+  margin-top: 20px;
+}
+
+.view-btn-secondary {
+  background-color: #aa6812;
+}
+
+.view-btn-secondary:hover {
+  background-color: #89530d; 
+}
+
+.view-btn {
+  background-color: #1254aa;
+}
+
+.view-btn:hover {
+  background-color: #0d4389; 
+}
+
+.btn-primary {
+  background-color: #1254aa; 
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+  width: 180px;
+  border-radius: 4px;
+  height: 40px;
+  border: none;
+  font-size: 19px;
+}
+
+
+/* Navigation Bar Styling */
 .navigation {
-  background-color: #f2f2f2; /* Background color for navigation */
+  background-color: #ffffff;
   padding: 10px 20px;
   position: relative;
   z-index: 1000;
@@ -36,7 +71,7 @@ h2 {
 
 .navbar-toggler {
   border: none;
-  color: #ffffff
+  color: #ffffff;
 }
 
 .navbar-toggler-icon {
@@ -47,19 +82,93 @@ h2 {
   color: #131313;
   padding: 10px 15px;
   text-transform: uppercase;
-  margin: 10px;
+  margin: 0 10px;
   text-align: right;
   font-weight: 500;
   font-size: 1rem;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-  background-color: #1b1b1b; /* Highlight color on hover */
+  background-color: #1b1b1b; 
   border-radius: 4px;
   color: #fff;
 }
 
-/* Define the fade-in animation */
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.row p {
+  padding: 20px 80px;
+  text-align: center;
+  background-color: white;
+  color: #0a0a0a;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+
+
+/* Header Row Styling */
+.header-row {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('images/crosstrek2.jpg'); /* Correct syntax for background-image */
+  background-repeat: no-repeat; /* Add this for no repeat */
+  background-position: center; /* Add this for center positioning */
+  background-size: cover; /* Make sure the image covers the whole container */
+  color: #fff; /* Adjust text color as needed */
+  position: relative; /* Ensure the overlay can be positioned absolutely */
+}
+
+
+/* Dark Overlay */
+.header-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust opacity for the overlay */
+  z-index: 1; /* Ensure the overlay is below the content but above the background image */
+}
+
+/* Ensure the content is above the overlay */
+.header-row > * {
+  position: relative;
+  z-index: 2;
+}
+
+.header-row h1 {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 5.5rem;
+  font-weight: bold;
+  text-shadow: 3px 2px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin-bottom: 20px;
+  z-index: 2;
+  opacity: 0; 
+  animation: fadeIn 1.5s ease-in forwards;
+  color: #ffffff;
+}
+
+/* Keyframes for fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -69,131 +178,81 @@ h2 {
   }
 }
 
-/* Apply the fade-in animation to an element */
-.fade-in {
-  animation: fadeIn 1.3s ease-in; /* Adjust duration and easing as needed */
-}
 
-
-/* Full cover image for the header */
-.header-row {
-  background-image: url(images/crosstrek1.jpg); /* Replace with your image URL */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  color: white;
-  height: 80vh; /* Set height for the header */
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center;
-  justify-content: center;
-  border-radius: 0; /* Remove rounded corners */
-  margin: 0;
-  width: 100vw; /* Full width of the viewport */
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%); /* Ensures the header is centered */
-  z-index: 1; /* Set a stacking context */
-}
-
-.header-row::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with opacity */
-  z-index: 1; /* Position the overlay below the text and button */
-}
-
-.header-row h1 {
-  font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 6rem;
-  font-weight: bold;
-  text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  margin-bottom: 20px; /* Space between the heading and the button */
-  z-index: 2; /* Ensure text stays above the overlay */
-}
+/* .header-row h1 {
+  margin-bottom: 20px;
+} */
 
 .btn-primary-header {
-  padding: 10px 20px; /* Adjust button padding */
-  background-color: #1254aa; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: #0d4389; 
+  padding: 10px 20px; 
+  color: #fff; 
   border: none;
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 20px; /* Font size for button */
-  transition: background-color 0.3s; /* Smooth color transition */
-  margin-top: 20px; /* Space above the button */
-  z-index: 2; /* Ensure button stays above the overlay */
-  width: 240px;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  font-family: "Urbanist", sans-serif;
 }
 
-.btn-primary-header {
-  margin-top: 20px; /* Space above the button */
+.btn-primary:hover {
+  background-color: #0d4389; 
 }
 
-.btn-primary-header:hover {
-  background-color: #0d4389; /* Darker shade on hover */
+/* Info Box Styling - Dark Row */
+.full-width-row {
+  background-color: #1b1b1b;
+  color: white;
+  padding: 40px 20px 0px 20px;
 }
 
-.header-row {
-  text-align: center; /* Center the content */
-  padding: 20px; /* Add padding for spacing */
-}
-
-.header-row h1 {
-  margin-bottom: 20px; /* Space between the heading and the button */
-}
-
-.row {
-  margin: 0; /* Remove default row margin */
-  width: 100%;
-  padding: 0px 0;
-}
-
-.row p {
-  padding: 20px;
+.info-box {
   text-align: center;
-  background-color: #ffffff;
-  color: #0a0a0a;
-  font-size: 1.2rem;
   border-radius: 8px;
 }
 
-.row-3 {
-  display: flex
+.info-box strong {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #aa6812;
+  font-family: "Urbanist", sans-serif;
 }
 
-.row-3 p {
+.info-box span {
+  font-size: 1.5rem;
+  font-family: "Urbanist", sans-serif;
+}
+
+.intro-row { 
+  background-color: #1b1b1b;
+  color: white;
+  padding: 20px 10px 40px 10px;
+}
+
+.intro-row h2 {
   text-align: center;
-  font-size: 18px;
-  font-family: 'Muli', sans-serif;
-}
-
-.row-p h2 {
-  text-align: left;
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 2.8rem;
+  font-weight: bold;
 }
 
-.row .col-md-12 {
-  padding: 65px;
+.intro-row h4 {
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.intro-row .col-md-12 {
+  padding: 65px 20px;
   width: 100%;
   background-color: #1b1b1b;
   color: #ffffff;
   text-align: center;
-}
-
-.row .col-md-12 h2 {
-  font-size: 2rem;
 }
 
 /* Left column with background image */
@@ -201,115 +260,136 @@ h2 {
   display: block;
   background-color: #fff;
   height: 400px;
-  padding: 60px;
+  padding: 20px;
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
-  align-content: flex-end;
-  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Right column text styling */
 .right-column-row-3 {
-  background-image: url(images/crosstrek.png); /* Replace with your image URL */
-  background-size: cover;
+  background-image: url(images/crosstrek.png);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px; /* Adjust height as needed */
-  width: 60%;
+  height: 400px;
 }
 
 .row-3 {
-  padding: 60px 0;
+  padding: 30px 0;
+  height: auto;
 }
 
+
+/* Row Four - "Extra Power" */
+
 /* Left column with background image */
+.left-column-row-4 {
+  background-image: url(images/crosstrek11.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right column text styling */
 .right-column-row-4 {
   display: block;
   background-color: #fff;
-  height: 640px;
-  padding: 60px;
+  height: 500px;
+  padding: 20px;
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
   align-content: center; 
-   width: 40%;
 }
 
-/* Right column text styling */
-.left-column-row-4 {
-  background-image: url(images/crosstrek11.jpg); /* Replace with your image URL */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 640px; /* Adjust height as needed */
-  overflow: hidden; /* Ensures that the image does not overflow its container */
-  display: inline-block; /* Allows for responsive sizing */
-  width: 60%;
-}
 
+/* Row Five - "Sporty Exterior Design" */
 /* Left column with background image */
 .left-column-row-5 {
   display: block;
   background-color: #fff;
-  height: 640px;
-  padding: 60px;
+  height: auto;
+  padding: 20px;
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
   align-content: center; 
-  width: 40%;
 }
+
 
 /* Right column text styling */
 .right-column-row-5 {
-  background-image: url(images/crosstrek10.jpg); /* Replace with your image URL */
+  background-image: url(images/crosstrek10.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 640px; /* Adjust height as needed */
-  width: 60%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
+
+/* Row Six - "Comfortable and Modern Interior" */
+
 /* Left column with background image */
 .left-column-row-6 {
-  background-image: url(images/crosstrek8.jpg); /* Replace with your image URL */
+  background-image: url(images/crosstrek5.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 640px; /* Adjust height as needed */
-  width: 60%;
+  height: 500px;
 }
 
 /* Right column text styling */
 .right-column-row-6 {
   display: block;
   background-color: #fff;
-  height: auto;
-  padding: 60px;
+  padding: 20px;
   color: #0a0a0a;
   font-size: 1.5rem;
   text-align: center;
   align-content: center; 
-  width: 40%;
 }
 
-.row-6 {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically if needed */
-  text-align: center; /* Center text within the column */
-  padding: 0px; /* Adjust padding as needed */
-}
 
-.right-column p {
-  margin: 0;
+/* Row Seven - "Safe, Convenient, and Entertaining" */
+
+/* Left column with background image */
+.left-column-row-7 {
+  display: block;
+  background-color: #fff;
+  height: auto;
+  padding: 20px;
+  color: #0a0a0a;
+  font-size: 1.5rem;
   text-align: center;
+  align-content: center; 
 }
 
+/* Right column text styling */
+.right-column-row-7 {
+  background-image: url(images/crosstrek8.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+
+/* Row Eight - Full Width Image */
 .full-image-row-1 {
-  background-image: url(images/crosstrek2.jpg); /* Replace with your image URL */
+  background-image: url(images/24_CTK_gallery_ext_03.jpeg);
   background-size: cover;
   background-position: center center ;
   background-repeat: no-repeat;
@@ -317,84 +397,95 @@ h2 {
   height: 350px;
 }
 
+/* Row 9 - "Ready to Hit the Road?" */
+.row-9 {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.row-9 h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+
+.row-9 h4 {
+  font-size: 2rem;
+}
+
+
+
+.row-9 .view-btn {
+  background-color: #aa6812; 
+  padding: 10px 20px; 
+  color: #fff; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  font-family: "Urbanist", sans-serif;
+}
+
 
 .view-btn {
-  margin: 20px
+  margin-top: 20px
 }
 
 .list-container {
   display: flex;
   color: #fff;
   justify-content: center;
-  align-items: flex-start; /* Aligns items to the top of the container */
-  max-width: 800px; /* Optional: set a maximum width for the container */
-  padding: 20px; /* Optional: padding around the container */
-  background-color: #1b1b1b; /* Optional: background color for the container */
-  border-radius: 8px; /* Optional: rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  align-items: flex-start;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #1b1b1b;
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .list-column {
   list-style-type: disc; /* Bulleted list */
   margin: 0;
-  padding: 0 20px; /* Space between columns */
+  padding: 0 20px; 
 }
 
 .list-column li {
-  margin-bottom: 10px; /* Space between list items */
+  margin-bottom: 10px;
 }
 
 .left-column-row-3 {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .view-inventory {
-  margin-top: 20px; /* Space between text and button */
+  margin-top: 20px; 
 }
 
-.view-btn {
-  padding: 10px 20px; /* Adjust button padding */
-  background-color: #1254aa; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none;
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer;
-  font-size: 20px; /* Font size for button */
-  transition: background-color 0.3s; /* Smooth color transition */
-  font-family: "Urbanist", sans-serif;
+
+
+/* Ensure gallery images cover their container */
+.custom-gallery-image {
+  width: 100%; /* Make the image fill the width of the container */
+  height: 100%; /* Make the image fill the height of the container */
+  object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+  display: block; /* Remove any default inline spacing */
 }
 
-.view-btn:hover {
-  background-color: #0d4389; /* Darker shade on hover */
-}
 
-.btn-primary {
-  padding: 10px 20px; /* Adjust button padding */
-  background-color: #1254aa; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none;
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer;
-  font-size: 20px; /* Font size for button */
-  transition: background-color 0.3s; /* Smooth color transition */
-  margin-top: 20px;
-  font-family: "Urbanist", sans-serif;
-  letter-spacing: 0.05;
-  width: 180px;
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  padding: 0px;
 }
-
-.btn-primary:hover {
-  background-color: #0d4389; /* Darker shade on hover */
-}
-
 
 /* Basic styling */
-body {
-  font-family: Arial, sans-serif;
-}
-
 .gallery {
   display: flex;
   gap: 0px;
@@ -403,147 +494,128 @@ body {
 .gallery-item {
   width: 150px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05);
 }
 
 
-
-
-
-/* Full width, same height images */
-.custom-gallery-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-/* Modal styles */
-.custom-modal {
-  display: flex;
-  align-content: center;
-  justify-content: center;
+/* Modal styling */
+#custom-modal {
+  display: none;
   position: fixed;
-  z-index: 1;
-  padding-top: 60px;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0,0,0,0.9);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Modal content wrapper for slideshow */
-.custom-modal-content {
-  position: relative;
-  margin: auto;
-  width: 60%; /* Modal will take 60% of the screen width */
-  max-width: 100%; /* Ensures responsiveness */
-  max-height: 80%; /* Limits modal height to 80% of the viewport */
-  overflow: hidden; /* Prevents content overflow */
-  background-color: white;
-  padding: 0px;
-  border-radius: 0px;
-}
 
-.col-md-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
-  padding: 0px;
-}
 
-/* Slide image styles */
-.custom-slide {
-  display: none; /* Hide all slides initially */
-}
-
-.custom-active {
-  display: block; /* Show only the active slide */
-}
-
-.custom-slide img {
+/* Modal styling */
+#custom-modal-2 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 600px; /* Enforce a consistent height */
-  object-fit: cover; /* Ensures images fill the space uniformly */
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content container */
+.modal-content {
+  position: relative;
+  max-width: 100%;
+  width: 60%; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slideshow images */
+.modal-content img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover; 
+  max-height: 100%;
+}
+
+
+/* Slides */
+.custom-slide {
+  display: none;
+  width: 100%;
+}
+
+.custom-slide.custom-active {
+  display: block;
+  height: 500px;
 }
 
 /* Navigation buttons */
-.custom-prev, .custom-next {
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  padding: 20px;
-  color: white;
+  width: auto;
+  padding: 16px;
+  color: #fff;
   font-weight: bold;
-  font-size: 20px;
-  transition: 0.3s;
+  font-size: 24px;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none;
 }
 
-.custom-prev {
+.prev {
   left: 0;
 }
 
-.custom-next {
+.next {
   right: 0;
 }
 
-.custom-prev:hover, .custom-next:hover {
+.prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Close button */
-.custom-close {
+.close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 10px;
+  right: 25px;
   color: #fff;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
 }
 
-.custom-close:hover {
-  color: #ccc;
-}
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* Basic styling */
-body {
-  font-family: Arial, sans-serif;
-}
-
-.gallery {
-  display: flex;
-  gap: 10px;
-}
-
-.gallery-item {
-  width: 150px;
+/* Close button (if applicable) */
+#custom-modal .close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-}
 
-/* Modal styles */
+
+
+
+
+/* View Gallery Modal - Row Three */
+/* Prevent scrolling when modal is open */
 .modal {
   display: none;
   position: fixed;
@@ -551,7 +623,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: auto;
   background-color: rgba(0,0,0,0.8);
 }
@@ -560,8 +632,7 @@ body {
   position: relative;
   margin: 15% auto;
   padding: 0px;
-  width: 80%;
-  max-width: 900px;
+  width: 60%;
   background-color: #fff;
 }
 
@@ -577,8 +648,8 @@ body {
 
 .slide img {
   width: 100%;
-  height: 500px; /* Adjust this value to your preferred height */
-  object-fit: cover; /* Ensure images cover the container while maintaining aspect ratio */
+  height: 450px; 
+  object-fit: cover;
 }
 
 .close {
@@ -595,14 +666,12 @@ body {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
-  padding: 16px;
-  color: #fff;
+  padding: 20px;
+  color: white;
   font-weight: bold;
-  font-size: 18px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0,0,0,0.5);
+  font-size: 20px;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .next {
@@ -610,11 +679,21 @@ body {
   border-radius: 3px 0 0 3px;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
+
+
+
+
+/* Footer Styling */
 .footer {
   display: grid;
   background-color: #1b1b1b;
-  height: 420px;
+  height: 100%;
   padding: 60px;
+  width: 100vw;
   color: #ffffff;
   font-size: 1.5rem;
   text-align: center;
@@ -624,7 +703,7 @@ body {
 
 .footer img {
   margin-bottom: 40px;
-  width: 240px;
+  width: 200px;
 }
 
 .navbar-brand .logo {
@@ -637,98 +716,281 @@ body {
 
 
 
-.gallery-item {
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-
-.gallery-item img {
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-
-
-
-
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .masonry-gallery {
-    column-count: 3; /* 3 columns for smaller screens */
+    column-count: 3;
   }
 }
 
+
 @media (max-width: 768px) {
   .masonry-gallery {
-    column-count: 2; /* 2 columns for tablets */
+    column-count: 2; 
   }
+
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .row.row-5 {
+      display: flex;
+    }
+    
+    /* Columns order on medium and larger screens */
+  .left-column-row-5 {
+      order: 1;
+    }
+    
+  .right-column-row-5 {
+      order: 2;
+      }
+    
+  .row.row-5 {
+        flex-direction: column-reverse; /* Reverses the order of columns */
+      }
+      
+  .row.row-7 {
+        flex-direction: column-reverse; /* Reverses the order of columns */
+      }
+
+ .row-9 {
+    padding: 40px;
+    height: auto;
+  }
+
+
+  .row p {
+    padding: 20px 20px;
+    text-align: center;
+    background-color: white;
+    color: #0a0a0a;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+  }
+      
+
+  h2 {
+      margin-top: 40px;
+      font-size: 2rem;
+    }
+
+  .row p {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+    
+  .info-box strong {
+    font-size: 1.6rem;
+}
+
+  .info-box span {
+    font-size: 1.2rem;
+}
+
 }
 
 @media (max-width: 480px) {
   .masonry-gallery {
-    column-count: 1; /* 1 column for mobile */
+    column-count: 1; 
   }
+
+  .navbar-nav .nav-item .nav-link {
+    color: #131313;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    margin: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: "Urbanist", sans-serif;
 }
 
-
-/* Extra small devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
   .header-row h1 {
-    font-size: 4.0rem;
+    font-size: 3rem;
     font-weight: bold;
     text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.7);
     text-align: center;
-    z-index: 2; /* Ensure text stays above the overlay */
+    z-index: 2; 
   }
 
-  /* Full cover image for the header */
-.header-row {
-  background-image: url(images/crosstrek2.jpg); /* Replace with your image URL */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  color: white;
-  height: 60vh; /* Set height for the header */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0; /* Remove rounded corners */
-  margin: 0;
-  width: 100vw; /* Full width of the viewport */
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%); /* Ensures the header is centered */
-  z-index: 1; /* Set a stacking context */
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0px;
+  }
+
+  .custom-gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .header-row {
+    height: 110vh;
+  }
+
+
+  .row-9 h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
 }
 
+  .row-9 h4 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+
+
+  /* Full cover image for the header */
+  .header-row {
+    padding: 60px 20px;
+    background-image: url(images/crosstrek2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: white;
+    height: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0; 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1;
+}
+
+  .footer {
+    display: grid;
+    background-color: #1b1b1b;
+    height: auto;
+    padding: 40px 40px;
+}
+
+    .right-column-row-3 {
+      padding-top: 40px;
+          height: 250px;
+    }
+  
+    .left-column-row-4 {
+      height: 300px;
+    }
+  
+    .right-column-row-4 {
+      height: auto;
+    }
+  
+    .left-column-row-5 {
+      height: auto;
+    }
+  
+    .right-column-row-5 {
+      height: 300px;
+    }
+  
+    .left-column-row-6 {
+      height: 300px;
+    }
+  
+    .right-column-row-6 {
+      height: auto;
+    }
+  
+    .left-column-row-7 {
+      height: auto;
+    }
+  
+    .right-column-row-7 {
+      height: 300px;
+    }
+
+
+}
+
+@media (max-width: 375px) {
+  .header-row h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .row-9 h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+  .row-9 h4 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .row p {
+    font-size: 1.2rem;
+  }
+
+  .left-column-row-5 {
+    padding: 20px 20px;
+  }
+
+  .right-column-row-6 {
+    padding: 20px 30px;
+  }
+
+  .left-column-row-7 {
+    padding: 20px 30px;
+  }
+
+
+}
+
+@media (max-width: 320px) {
+  .header-row h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .row p {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
 }
 
 /* Small devices (tablets, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  /* Your custom styles here */
+  .header-row h1 {
+    font-size: 3rem;
+  }
+
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 33.33%;
+}
 }
 
 /* Medium devices (tablets and small desktops, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  /* Your custom styles here */
+  .header-row h1 {
+    font-size: 3.5rem;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  /* Your custom styles here */
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-  /* Your custom styles here */
-}
-
-/* Extra extra large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  /* Your custom styles here */
-}
+  .header-row h1 {
+    font-size: 4rem;
+  }
+}  
