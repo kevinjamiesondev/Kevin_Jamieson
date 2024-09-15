@@ -18,7 +18,7 @@ function scrollToGallery() {
 //  Gallery
 let customSlideIndex = 0;
 
-// Ensure the modal is hidden when the page loads
+// Makes sure the modal is hidden when the page loads
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById("custom-modal");
   modal.style.display = "none";
@@ -96,10 +96,13 @@ for (let i = 0; i < customImages.length; i++) {
   });
 }
 
-// Add event listeners for custom navigation buttons
-document.getElementById("prev-custom").addEventListener("click", function() {
-  plusCustomSlides(-1); // Previous slide
-});
-document.getElementById("next-custom").addEventListener("click", function() {
-  plusCustomSlides(1); // Next slide
+document.addEventListener('DOMContentLoaded', function() {
+  // Assuming slides and buttons are loaded
+  document.getElementById('prev-custom').addEventListener('click', function() {
+    plusCustomSlides(-1); // Go to previous slide
+  });
+
+  document.getElementById('next-custom').addEventListener('click', function() {
+    plusCustomSlides(1); // Go to next slide
+  });
 });
