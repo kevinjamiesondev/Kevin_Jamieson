@@ -6,14 +6,11 @@ window.onload = function() {
   });
 };
 
-
 function scrollToGallery() {
   const element = document.getElementById('view-gallery');
   if (element) {
-    requestAnimationFrame(() => {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+    element.scrollIntoView({
+      behavior: 'smooth'
     });
   }
 }
