@@ -339,7 +339,6 @@ a {
 }
 
 
-
 /* Row Six - "Comfortable and Modern Interior" */
 
 /* Left column with background image */
@@ -397,6 +396,7 @@ a {
   height: 350px;
 }
 
+
 /* Row 9 - "Ready to Hit the Road?" */
 .row-9 {
   background-color: #1b1b1b;
@@ -416,8 +416,6 @@ a {
 .row-9 h4 {
   font-size: 1.8rem;
 }
-
-
 
 .row-9 .view-btn {
   background-color: #aa6812; 
@@ -442,7 +440,6 @@ a {
   transition: background-color 0.3s;
   font-family: "Urbanist", sans-serif;
 }
-
 
 .view-btn {
   margin-top: 20px
@@ -479,7 +476,6 @@ a {
 .view-inventory {
   margin-top: 20px; 
 }
-
 
 .col-md-4 {
   flex: 0 0 auto;
@@ -582,6 +578,10 @@ a {
   height: 500px;
 }
 
+#prev-custom, #next-custom {
+  pointer-events: auto; /* Ensure the buttons can be clicked */
+}
+
 /* Navigation buttons */
 .prev, .next {
   cursor: pointer;
@@ -597,6 +597,7 @@ a {
   user-select: none;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001; /* Ensure buttons are clickable */
 }
 
 .prev {
@@ -737,7 +738,7 @@ body.modal-open {
   .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 0px;
+    top: 50%;
   }
 
 
@@ -763,7 +764,7 @@ body.modal-open {
   }
   
   .row.row-6 {
-      flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
 
   .left-column-row-4,
@@ -821,7 +822,7 @@ body.modal-open {
   .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 0px;
+    top: 50%;
   }
 
 }
@@ -851,7 +852,7 @@ body.modal-open {
   .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 0px;
+    top: 50%;
   }
 
   .masonry-gallery {
@@ -987,7 +988,7 @@ body.modal-open {
     margin: 15% auto;
     padding: 0px;
     background-color: #fff;
-    top: 80px;
+    top: 50%;
 }
 
   .modal-content img {
@@ -999,7 +1000,7 @@ body.modal-open {
   .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 80px;
+    top: 50%;
   }
 
 }
@@ -1021,20 +1022,20 @@ body.modal-open {
 
   .row.row-5 {
     flex-direction: column-reverse;
-}
+  }
 
-.row.row-6 {
-  flex-direction: column-reverse;
-}
+  .row.row-6 {
+    flex-direction: column-reverse;
+  }
 
 
-.row.row-7 {
-  flex-direction: column;
-}
+  .row.row-7 {
+    flex-direction: column;
+  }
 
-.left-column-row-7 {
-  height: auto;
-}
+  .left-column-row-7 {
+    height: auto;
+  }
 
 }
 
@@ -1054,7 +1055,7 @@ body.modal-open {
 
   .row.row-5 {
     flex-direction: column-reverse;
-}
+  }
 
   .row.row-6 {
     flex-direction: column-reverse;
