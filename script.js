@@ -6,16 +6,9 @@ window.onload = function() {
   });
 };
 
-function scrollToGallery() {
-  const element = document.getElementById('view-gallery');
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-}
 
-//  Gallery
+
+
 let customSlideIndex = 0;
 
 // Makes sure the modal is hidden when the page loads
@@ -23,16 +16,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById("custom-modal");
   modal.style.display = "none";
   showCustomSlides(customSlideIndex); // Show the first slide initially
+
+  // Add click event listeners to the prev and next buttons
+  const prevBtn = document.getElementById('prev-custom');
+  const nextBtn = document.getElementById('next-custom');
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', function() {
+      plusCustomSlides(-1); // Go to previous slide
+    });
+  
+    nextBtn.addEventListener('click', function() {
+      plusCustomSlides(1); // Go to next slide
+    });
+  }
 });
+
+
+
+
 
 // Function to open the modal with the given index
 function openCustomModal(index) {
   const modal = document.getElementById("custom-modal");
   modal.style.display = "block";
   modal.classList.add("show");
-  showCustomSlides(index);
+  customSlideIndex = index; 
+  showCustomSlides(customSlideIndex);
   document.addEventListener("keydown", keyNavigation);
-  document.addEventListener("click", handleClickOutside); // Handle clicks outside the modal
+  document.addEventListener("click", handleClickOutside);
 }
 
 // Function to close the modal
@@ -44,32 +56,44 @@ function closeCustomModal() {
   document.removeEventListener("click", handleClickOutside);
 }
 
+// Function to change the slide index
+function plusCustomSlides(n) {
+  // Calculate the new index first and check bounds
+  customSlideIndex += n;
+
+  const slides = document.getElementsByClassName("custom-slide");
+  if (customSlideIndex >= slides.length) {
+    customSlideIndex = 0; 
+  } else if (customSlideIndex < 0) {
+    customSlideIndex = slides.length - 1; 
+  }
+
+  showCustomSlides(customSlideIndex);
+}
+
 // Function to show the slides
 function showCustomSlides(index) {
   const slides = document.getElementsByClassName("custom-slide");
 
-  // Ensure index is within bounds
-  if (index >= slides.length) { 
-    customSlideIndex = 0; 
-  } else if (index < 0) { 
-    customSlideIndex = slides.length - 1; 
-  } else {
-    customSlideIndex = index;
-  }
-
   // Hide all slides and show the current one
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("custom-active");
+    slides[i].style.display = "none"; 
   }
-  slides[customSlideIndex].classList.add("custom-active");
+
+  slides[index].classList.add("custom-active");
+  slides[index].style.display = "block";
 }
 
-// Function to navigate slides (left/right)
-function plusCustomSlides(n) {
-  showCustomSlides(customSlideIndex + n);
+// Add click event listeners to images to go to the next slide
+const customImages = document.getElementsByClassName("custom-slide");
+for (let i = 0; i < customImages.length; i++) {
+  customImages[i].addEventListener("click", function() {
+    plusCustomSlides(1);
+  });
 }
 
-// Handle keyboard navigation
+// Keyboard navigation
 function keyNavigation(event) {
   if (event.key === "ArrowLeft") {
     plusCustomSlides(-1);
@@ -87,22 +111,3 @@ function handleClickOutside(event) {
     closeCustomModal();
   }
 }
-
-// Add click event listeners to images to go to the next slide
-const customImages = document.getElementsByClassName("custom-slide");
-for (let i = 0; i < customImages.length; i++) {
-  customImages[i].addEventListener("click", function() {
-    plusCustomSlides(1); // Move to the next slide on image click
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Assuming slides and buttons are loaded
-  document.getElementById('prev-custom').addEventListener('click', function() {
-    plusCustomSlides(-1); // Go to previous slide
-  });
-
-  document.getElementById('next-custom').addEventListener('click', function() {
-    plusCustomSlides(1); // Go to next slide
-  });
-});
