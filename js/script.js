@@ -12,18 +12,6 @@ window.onload = function() {
   });
 }
 
-
-document.addEventListener("scroll", function() {
-  const element = document.querySelector('.right-column-row-3');
-  const elementPosition = element.getBoundingClientRect().top;
-  const viewportHeight = window.innerHeight;
-
-  // Check if the element is within the viewport
-  if (elementPosition < viewportHeight) {
-    element.classList.add('visible');
-  }
-});
-
  
  let customSlideIndex = 0;
  
