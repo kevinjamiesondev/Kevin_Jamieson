@@ -126,12 +126,12 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url('images/crosstrek2.jpg'); /* Correct syntax for background-image */
-  background-repeat: no-repeat; /* Add this for no repeat */
-  background-position: center; /* Add this for center positioning */
-  background-size: cover; /* Make sure the image covers the whole container */
-  color: #fff; /* Adjust text color as needed */
-  position: relative; /* Ensure the overlay can be positioned absolutely */
+  background-image: url('../images/crosstrek2.jpg');
+  background-repeat: no-repeat; 
+  background-position: center; 
+  background-size: cover;
+  color: #fff; 
+  position: relative;
 }
 
 
@@ -143,8 +143,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Adjust opacity for the overlay */
-  z-index: 1; /* Ensure the overlay is below the content but above the background image */
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 1; 
 }
 
 /* Ensure the content is above the overlay */
@@ -271,7 +271,7 @@ a {
 
 /* Right column text styling */
 .right-column-row-3 {
-  background-image: url(images/crosstrek.png);
+  background-image: url(../images/crosstrek.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -288,7 +288,7 @@ a {
 
 /* Left column with background image */
 .left-column-row-4 {
-  background-image: url(images/crosstrek11.jpg);
+  background-image: url(../images/crosstrek11.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -328,7 +328,7 @@ a {
 
 /* Right column text styling */
 .right-column-row-5 {
-  background-image: url(images/crosstrek10.jpg);
+  background-image: url(../images/crosstrek10.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -343,7 +343,7 @@ a {
 
 /* Left column with background image */
 .left-column-row-6 {
-  background-image: url(images/crosstrek5.jpg);
+  background-image: url(../images/crosstrek5.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -378,7 +378,7 @@ a {
 
 /* Right column text styling */
 .right-column-row-7 {
-  background-image: url(images/crosstrek8.jpg);
+  background-image: url(../images/crosstrek8.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -388,7 +388,7 @@ a {
 
 /* Row Eight - Full Width Image */
 .full-image-row-1 {
-  background-image: url(images/24_CTK_gallery_ext_03.jpeg);
+  background-image: url(../images/24_CTK_gallery_ext_03.jpeg);
   background-size: cover;
   background-position: center center ;
   background-repeat: no-repeat;
@@ -612,16 +612,6 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Close button */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  color: #fff;
-  font-size: 55px;
-  font-weight: normal;
-  cursor: pointer;
-}
 
 
 /* View Gallery Modal - Row Three */
