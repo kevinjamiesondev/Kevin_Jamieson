@@ -284,6 +284,22 @@ a {
 }
 
 
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.right-column-row-3 {
+  animation: fadeInRight 1s ease-in-out;
+}
+
 /* Row Four - "Extra Power" */
 
 /* Left column with background image */
