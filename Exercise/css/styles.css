@@ -16,24 +16,22 @@ a {
   text-decoration: none;
 }
 
-.view-btn-secondary{
-  padding: 10px 20px; 
+.view-btn-secondary {
+  padding: 12px 25px;
   color: #fff; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 19px;
+  font-size: 20px;
   transition: background-color 0.3s;
   font-family: "Lato", sans-serif;
   margin-top: 20px;
-}
-
-.view-btn-secondary {
   background-color: #aa6812;
 }
 
 .view-btn-secondary:hover {
   background-color: #89530d; 
+  font-family: "Lato", sans-serif;
 }
 
 .btn-primary {
@@ -45,6 +43,7 @@ a {
   border: none;
   padding: 12px 25px;
   font-size: 20px;
+  font-family: "Lato", sans-serif;
 }
 
 .btn-primary:hover {
@@ -56,7 +55,19 @@ a {
   border: none;
   padding: 12px 25px;
   font-size: 20px;
+  font-family: "Lato", sans-serif;
 }
+
+#navbar {
+  background-color: #ffffff; /* White background color */
+  position: fixed; /* Make it fixed */
+  top: 0; /* Start visible */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect */
+  z-index: 1000; /* Keep it above other content */
+}
+
+
 
 
 /* Navigation Bar Styling */
@@ -257,6 +268,8 @@ a {
   text-align: center;
 }
 
+/* Row Four - "Always Room" */
+
 /* Left column with background image */
 .left-column-row-3 {
   display: block;
@@ -328,7 +341,6 @@ a {
   align-content: center; 
 }
 
-
 /* Right column text styling */
 .right-column-row-5 {
   background-image: url(../images/crosstrek10.jpg);
@@ -343,7 +355,6 @@ a {
 
 
 /* Row Six - "Comfortable and Modern Interior" */
-
 /* Left column with background image */
 .left-column-row-6 {
   background-image: url(../images/crosstrek5.jpg);
@@ -366,7 +377,6 @@ a {
 
 
 /* Row Seven - "Safe, Convenient, and Entertaining" */
-
 /* Left column with background image */
 .left-column-row-7 {
   display: block;
@@ -389,6 +399,7 @@ a {
 }
 
 
+
 /* Row Eight - Full Width Image */
 .full-image-row-1 {
   background-image: url(../images/24_CTK_gallery_ext_03.jpeg);
@@ -398,6 +409,7 @@ a {
   background-attachment: scroll;
   height: 350px;
 }
+
 
 
 /* Row 9 - "Ready to Hit the Road?" */
@@ -420,33 +432,7 @@ a {
   font-size: 1.8rem;
 }
 
-.row-9 .view-btn {
-  background-color: #aa6812; 
-  padding: 10px 20px; 
-  color: #fff; 
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-  font-family: "Lato", sans-serif;
-}
 
-.row-9 .view-btn:hover {
-  background-color: #89530d; 
-  padding: 10px 20px; 
-  color: #fff; 
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-  font-family: "Urbanist", sans-serif;
-}
-
-.view-btn {
-  margin-top: 20px
-}
 
 .list-container {
   display: flex;
@@ -476,9 +462,9 @@ a {
   align-items: center; 
 }
 
-.view-inventory {
-  margin-top: 20px; 
-}
+
+
+/* Full Width Grid Gallery styling */
 
 .col-md-4 {
   flex: 0 0 auto;
@@ -496,8 +482,6 @@ a {
   width: 150px;
   cursor: pointer;
 }
-
-
 
 /* Ensure gallery images cover their container */
 .custom-gallery-container {
@@ -596,11 +580,12 @@ a {
   font-weight: bold;
   font-size: 20px;
   transition: 0.3s ease;
-  border-radius: 3px;
+  border-radius: 0px;
   user-select: none;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1001; /* Ensure buttons are clickable */
+  border: none;
 }
 
 .prev {
@@ -614,39 +599,6 @@ a {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
-
-
-/* View Gallery Modal - Row Three */
-/* Prevent scrolling when modal is open */
-.slides {
-  position: relative;
-  width: 100%;
-}
-
-.slide {
-  display: none;
-  text-align: center;
-}
-
-.slide img {
-  width: 100%;
-  height: 450px; 
-  object-fit: cover;
-}
-
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-body.modal-open {
-  overflow: hidden;
-}
-
-
-
 
 
 /* Footer Styling */
@@ -672,6 +624,9 @@ body.modal-open {
   height: auto;
 }
 
+
+
+/* Resonsive Styling */
 
 /* For tablets and smaller desktops */
 @media (min-width: 992px) and (max-width: 1199.98px) {

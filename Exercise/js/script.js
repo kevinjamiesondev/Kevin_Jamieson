@@ -1,20 +1,36 @@
-window.onload = function() {
-  document.querySelector('.btn-primary').addEventListener('click', function() {
-    document.getElementById('view-gallery').scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
- };
-
+// View Gallery Smooth Scroll Function
  function scrollToGallery() {
   document.getElementById('view-gallery').scrollIntoView({
     behavior: 'smooth'
   });
 }
 
- 
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+// When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
+let lastScrollTop = 0;
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  const navbar = document.getElementById("navbar");
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down
+    navbar.style.top = "-50px"; // Hide the navbar
+  } else {
+    // Scrolling up
+    navbar.style.top = "0"; // Show the navbar
+  }
+
+  // Update last scroll position
+  lastScrollTop = scrollTop;
+}
+
+
+
+
  let customSlideIndex = 0;
- 
  
  // Makes sure the modal is hidden when the page loads
  document.addEventListener('DOMContentLoaded', function() {
