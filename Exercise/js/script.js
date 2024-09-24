@@ -5,29 +5,34 @@
   });
 }
 
-// When the user scrolls down 20px from the top of the document, slide down the navbar
-// When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
-let lastScrollTop = 0;
+// Go to Top Button
+window.onload = function() {
+  let mybutton = document.getElementById("myBtn");
 
-window.onscroll = function() {scrollFunction()};
+  window.onscroll = function() {
+    scrollFunction();
+  };
 
-function scrollFunction() {
-  const navbar = document.getElementById("navbar");
-  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop) {
-    // Scrolling down
-    navbar.style.top = "-50px"; // Hide the navbar
-  } else {
-    // Scrolling up
-    navbar.style.top = "0"; // Show the navbar
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
 
-  // Update last scroll position
-  lastScrollTop = scrollTop;
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  }
+};
+
+function topFunction() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Smooth scrolling effect
+  });
 }
-
-
 
 
  let customSlideIndex = 0;
